@@ -1,6 +1,7 @@
 # Общие настройки для macOS, Linux, Windows, JetBrains, Visual Studio Code, Sublime Text, Node.js
 
 ### JetBrains ###
+.idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -122,6 +123,7 @@ GitHub.sublime-settings
 .zed
 
 ### VisualStudioCode ###
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
