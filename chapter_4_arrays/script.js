@@ -1,125 +1,129 @@
 // Массивы
-// Создание массивов, использование ключевого слова new
-var catNames = new Array("Larry", "Fuzzball", "Mr. Furly");
-console.log(catNames);
+
+// Создание массивов с использованием ключевого слова new
+var catNames = new Array('Larry', 'Fuzzball', 'Mr. Furly')
+console.log(catNames)
 
 // Литеральное определение массива
-var dogName = ["Shaggy", "Tennesee", "Dr. Spock"];
-console.log(dogName);
+var dogNames = ['Shaggy', 'Tennessee', 'Dr. Spock']
+console.log(dogNames)
 
 // Заполнение массивов значениями
-var peopleList = [];
-peopleList[0] = "Chris Minnick";
-peopleList[1] = "Eva Holland";
-peopleList[2] = "Abraham Lincoln";
-console.log(peopleList);
+var peopleList = []
+peopleList[0] = 'Chris Minnick'
+peopleList[1] = 'Eva Holland'
+peopleList[2] = 'Abraham Lincoln'
+console.log(peopleList)
 
-peopleList[99] = "Tina Turner";
-console.log(peopleList.length);
+peopleList[99] = 'Tina Turner'
+console.log('Длина массива:', peopleList.length)
 
 // Многомерные массивы
-/*
-var listOfList
-[0][0];
-console.log(listOfList);
-*/
+var bestAlbumsByGenre = []
+bestAlbumsByGenre[0] = [
+	'Johnny Cash: Live at Folsom',
+	'Patsy Cline: Sentimentally Yours',
+	"Hank Williams: I'm Blue Inside",
+]
+bestAlbumsByGenre[1] = [
+	'T-Rex: Slider',
+	'Nirvana: Nevermind',
+	'Lou Reed: Transformer',
+]
+bestAlbumsByGenre[2] = [
+	'Flipper: Generic',
+	'The Dead Milkmen: Big Lizard in My Backyard',
+	'Patti Smith: Easter',
+]
 
-/*
-var bestAlbumsByGenre = [];
-bestAlbumsByGenre[0] = "Country";
-bestAlbumsByGenre[0][0] = "Johnny Cash: Live at Folsom";
-bestAlbumsByGenre[0][1] = "Patsy Cline: Sentimentally Yours";
-bestAlbumsByGenre[0][2] = "Hank Williams: I`m Blue Inside";
-bestAlbumsByGenre[1] = "Rock";
-bestAlbumsByGenre[1][0] = "T-Rex: Slider";
-bestAlbumsByGenre[1][1] = "Nirvana: Nevermind";
-bestAlbumsByGenre[1][2] = "Lou Reed: Transformer";
-bestAlbumsByGenre[2] = "Punk";
-bestAlbumsByGenre[2][0] = "Flipper: Generic";
-bestAlbumsByGenre[2][1] = "The Dead Milkmen: Big Lizard in my Backyard";
-bestAlbumsByGenre[2][2] = "Petti Smith: Easter";
+// Доступ к элементам многомерного массива
+console.log('Лучшие альбомы по жанрам:', bestAlbumsByGenre)
+console.log('Лучшие рок-альбомы:', bestAlbumsByGenre[1])
+console.log('Третий альбом в жанре панк:', bestAlbumsByGenre[2][2])
 
-// Доступ к элементам массива
-console.log(bestAlbumsByGenre);
+// Пример работы с массивом, содержащим разные типы данных
+var random = ['tree', 795, [0, 1, 2]]
+console.log('Элемент массива:', random[2][2])
 
-console.log(bestAlbumsByGenre[2]);
+// Перемещение по элементам массива в цикле
+var myArray = ['apple', 'banana', 'cherry']
+for (var i = 0; i < myArray.length; i++) {
+	console.log('Элемент массива:', myArray[i])
+}
 
-// Доступ к многомерному массиву
-var random = ["tree", 795, [0, 1, 2]];
-
-console.log(random[2][2]);
-*/
-
-// Перемещение по элементам массива в цикле.
 // Свойства массивов
-/* Свойство - Возвращаемое значение
-
-prototype - Позволяет добавлять свойства и методы в обьекта Array.
-
-constructor - Ссылка на функцию, создавшую прототип обьекта Array.
-
-length - Возвращает или устанавливает количество элементов в массиве.
-*/
-
-var myArray = [2000];
-
-console.log(myArray.length);
-
-console.log(myArray.length = 10);
+var exampleArray = []
+exampleArray[2000] = 'Элемент'
+console.log('Длина массива:', exampleArray.length)
+exampleArray.length = 10 // Уменьшение длины массива
+console.log('Новая длина массива:', exampleArray.length)
 
 // Методы для работы с массивами
-/* Метод - Возвращаемое значение.
 
-concat() - Новый массив, содержащий текущий массив и дополненный другими
- массивами и элементами.
+// concat()
+var fruits = ['apple', 'banana']
+var vegetables = ['carrot', 'potato']
+var combined = fruits.concat(vegetables)
+console.log('Объединенный массив:', combined)
 
-every() - Возвращает значение true, если каждый елемент массива
- удовлетворяет условию, предоставляемому текстовй функцией.
+// indexOf()
+var index = fruits.indexOf('banana')
+console.log("Индекс 'banana':", index)
 
-filter() - Новый массив, который содержит все элементы текущего массива,
- удовлетворяющие условию, предоставляемому заданной текстовой функцией.
+// join()
+var joined = fruits.join(', ')
+console.log('Массив в строку:', joined)
 
-forEach() - Выполняет заданную функцию для каждого элемента массива.
+// push() и pop()
+fruits.push('cherry')
+console.log('После добавления элемента:', fruits)
+fruits.pop()
+console.log('После удаления последнего элемента:', fruits)
 
-indexOf() - Индекс превого вхождения заданного значения в массиве. Если
- значение не обнаружено, то возвращается -1.
+// shift() и unshift()
+fruits.shift()
+console.log('После удаления первого элемента:', fruits)
+fruits.unshift('grape')
+console.log('После добавления элемента в начало:', fruits)
 
-join() - Обьединяет все элементы массива в одну строку.
+// slice()
+var sliced = combined.slice(1, 3)
+console.log('Часть массива:', sliced)
 
-lastIndexOf() - Индекс последнего вхождения заданного значения в массиве.
- Если значение не обнаружено, возвращается -1.
+// sort()
+var sorted = fruits.sort()
+console.log('Отсортированный массив:', sorted)
 
-map() - Новый массив, полученный путем преобразования каждого элемента
- текущего масива с помощью заданной функции.
+// reverse()
+var reversed = fruits.reverse()
+console.log('Обратный порядок массива:', reversed)
 
-pop() - Удаляет последний элемент из массива.
+// map()
+var numbers = [1, 2, 3]
+var squared = numbers.map(function (num) {
+	return num * num
+})
+console.log('Квадраты чисел:', squared)
 
-push() - Добавляет новые элементы в конец массива.
+// filter()
+var filtered = numbers.filter(function (num) {
+	return num > 1
+})
+console.log('Числа больше 1:', filtered)
 
-reduce() - Сводит два значения массива в одно, применяя к обоим заданную
- функцию (слева направо).
+// reduce()
+var sum = numbers.reduce(function (acc, num) {
+	return acc + num
+}, 0)
+console.log('Сумма чисел:', sum)
 
-reduceRight() - Сводит два значения массива в одно, применяя к обоим
- заданную функцию (справа налево).
+// every() и some()
+var allPositive = numbers.every(function (num) {
+	return num > 0
+})
+console.log('Все числа положительные:', allPositive)
 
-reverse() - Обращает порядок следования элементов в массиве.
-
-shift() - Удаляет первый элемент из массива и возвращает его, изменяя длину
- массива.
-
-slice() - Выбирает часть массива и возвращает его в виде нового массива.
-
-some() - Возвращает значение true, если один или несколько элементов массива
- удовлетворяет условию, предоставляемому текстовой функией.
-
-sort() - Возвращает отсортированный массив (по умолчанию  сортировка
- выполняется в алфавитном порядке и в порядке возрастания).
-
-splice() - Возвращает новый массив, состоящий из элементов, которые были
- добавлены или удалены из данного массива.
-
-toString() - Преобразует массив в строку.
-
-unShift() - Возвращает новый массив другой длины, к которому добавлены один
- или нескольоко элементов.
-*/
+var hasNegative = numbers.some(function (num) {
+	return num < 0
+})
+console.log('Есть ли отрицательные числа:', hasNegative)

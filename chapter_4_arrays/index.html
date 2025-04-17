@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Методы для работы с массивами</title>
-</head>
-<body>
-<script>
-    var animals = ["тигр", "медведь"];
-    var fruit = ["дыня", "апельсин"];
-    var dishes = ["тарелка", "бокал", "чашка"];
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Методы для работы с массивами</title>
+	</head>
+	<body>
+		<h1>Примеры работы с массивами</h1>
+		<script>
+			// Создаем массивы
+			var animals = ['тигр', 'медведь']
+			var fruit = ['дыня', 'апельсин']
+			var dishes = ['тарелка', 'бокал', 'чашка']
 
-    var whereIsTheTiger = animals.indexOf("тигр");
-    var fruitsAndAnimals = fruit.concat(animals);
+			// Используем метод indexOf для поиска индекса элемента
+			var whereIsTheTiger = animals.indexOf('тигр')
 
-    document.write(animals + "<br>");
-    document.write("Индекс тигра: " + whereIsTheTiger + "<br>");
-    document.write(fruitsAndAnimals + "<br>");
-    whereIsTheTiger = animals.indexOf("тигр");
-    document.write("Индекс тигра: " + whereIsTheTiger + "<br>");
-</script>
-</body>
+			// Объединяем массивы с помощью concat
+			var fruitsAndAnimals = fruit.concat(animals)
+
+			// Выводим результаты
+			document.write('<p>Массив животных: ' + animals.join(', ') + '</p>')
+			document.write('<p>Индекс тигра: ' + whereIsTheTiger + '</p>')
+			document.write(
+				'<p>Объединенный массив фруктов и животных: ' +
+					fruitsAndAnimals.join(', ') +
+					'</p>'
+			)
+		</script>
+	</body>
 </html>

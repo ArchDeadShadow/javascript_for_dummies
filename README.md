@@ -125,21 +125,21 @@ async function fetchData() {
 
 - **Стрелочные функции:**
 
-  ```javascript
-  const sum = (a, b) => a + b
-  ```
+```javascript
+const sum = (a, b) => a + b
+```
 
 - **Шаблонные строки:**
 
-  ```javascript
-  const greeting = `Привет, ${name}!`
-  ```
+```javascript
+const greeting = `Привет, ${name}!`
+```
 
 - **Деструктуризация:**
 
-  ```javascript
-  const { x, y } = { x: 10, y: 20 }
-  ```
+```javascript
+const { x, y } = { x: 10, y: 20 }
+```
 
 - **Модули:**
   - Экспорт: `export`

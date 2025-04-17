@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Привет, HTML!</title>
-    <script>
-        function countToTen() {
-            var count = 0;
-            while (count < 10) {
-                count++;
-                document.getElementById("theCount").innerHTML += count + "<br>";
-            }
-        }
-    </script>
-</head>
-<body onload="countToTen();">
-<h1>Посчитаем до 10 вместе с JavaScript!</h1>
-<p id="theCount"></p>
-</body>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Привет, HTML!</title>
+		<script>
+			function countToTen() {
+				let count = 0 // Используем let вместо var для лучшей практики
+				const outputElement = document.getElementById('theCount')
+
+				// Очищаем содержимое перед добавлением нового текста
+				outputElement.innerHTML = ''
+
+				while (count < 10) {
+					count++
+					outputElement.innerHTML += `${count}<br>`
+				}
+			}
+		</script>
+	</head>
+	<body onload="countToTen();">
+		<h1>Посчитаем до 10 вместе с JavaScript!</h1>
+		<p id="theCount"></p>
+	</body>
 </html>
