@@ -20,8 +20,8 @@
 
 ```javascript
 function addt(aString) {
-  aString += "t";
-  return aString;
+	aString += 't'
+	return aString
 }
 ```
 
@@ -44,7 +44,7 @@ function addt(aString) {
 Пример объявления функции:
 
 ```javascript
-var myFunction = function () {};
+var myFunction = function () {}
 ```
 
 или
@@ -71,7 +71,7 @@ function myFunction()
 
 ```javascript
 {
-  // Тело функции
+	// Тело функции
 }
 ```
 
@@ -82,7 +82,7 @@ function myFunction()
 Использование функции осуществляется путём её **вызова**. Вызов функции приводит к выполнению инструкций, составляющих её тело:
 
 ```javascript
-myFunction();
+myFunction()
 ```
 
 ---
@@ -100,7 +100,7 @@ function myFunction(parameter) {}
 Для вызова функции с передачей ей аргумента используется следующий синтаксис:
 
 ```javascript
-myFunction(myArgument);
+myFunction(myArgument)
 ```
 
 ---
@@ -112,7 +112,7 @@ myFunction(myArgument);
 Для возврата значения используется ключевое слово `return`, например:
 
 ```javascript
-return myValue;
+return myValue
 ```
 
 ---
@@ -123,24 +123,24 @@ return myValue;
 // Функция для сложения чисел, образующих массив
 
 function addNumbers(numbersToAdd) {
-  var sum = 0;
-  for (var i = 0; i < numbersToAdd.length; i++) {
-    sum = sum + numbersToAdd[i];
-  }
-  return sum;
+	var sum = 0
+	for (var i = 0; i < numbersToAdd.length; i++) {
+		sum = sum + numbersToAdd[i]
+	}
+	return sum
 }
 
-var myNumbers1 = [2, 4, 2, 7];
-var myNumbers2 = [3333, 222, 111];
-var myNumbers3 = [777, 555, 777, 555];
+var myNumbers1 = [2, 4, 2, 7]
+var myNumbers2 = [3333, 222, 111]
+var myNumbers3 = [777, 555, 777, 555]
 
-var sum1 = addNumbers(myNumbers1);
-var sum2 = addNumbers(myNumbers2);
-var sum3 = addNumbers(myNumbers3);
+var sum1 = addNumbers(myNumbers1)
+var sum2 = addNumbers(myNumbers2)
+var sum3 = addNumbers(myNumbers3)
 
-document.write(sum1 + "<br>");
-document.write(sum2 + "<br>");
-document.write(sum3 + "<br>");
+document.write(sum1 + '<br>')
+document.write(sum2 + '<br>')
+document.write(sum3 + '<br>')
 ```
 
 > **Примечание:** В оригинальном коде были ошибки в названиях переменных и в цикле перебора массива.
@@ -194,8 +194,8 @@ document.write(sum3 + "<br>");
 
 ```javascript
 function getTheDate() {
-  var rightNow = new Date();
-  document.write(rightNow.toDateString());
+	var rightNow = new Date()
+	document.write(rightNow.toDateString())
 }
 ```
 
@@ -212,11 +212,11 @@ function getTheDate() {
 ```javascript
 // Возврат значения функцией
 function getHello() {
-  return "Привет!";
+	return 'Привет!'
 }
 
-var helloText = getHello();
-console.log(helloText);
+var helloText = getHello()
+console.log(helloText)
 ```
 
 Как правило, инструкция `return` является последней инструкцией функции. Её выполнение означает выход из функции. Вы можете использовать эту инструкцию для возврата функцией любого литерального значения (например, строки "Привет!" или числа 3), значения переменной или выражения, а также объекта, массива и даже другой функции.
@@ -224,9 +224,44 @@ console.log(helloText);
 ```javascript
 // Возврат результата вычисления выражения
 function getCircumference() {
-  var radius = 12;
-  return 2 * Math.PI * radius;
+	var radius = 12
+	return 2 * Math.PI * radius
 }
 
-console.log(getCircumference());
+console.log(getCircumference())
 ```
+
+## Передача и использование аргументов
+
+Для того чтобы функция могла выполнять одни и те же действия с различным входными данными, у программиста должна быть возможность передавать эти данные функции. Такая возможность уже была продемонстрирована, где для передачи параметров использовались скобки после имени функции в ее объявлении.
+
+Поначалу различные между параметрами и аргументами может не быть для вас очевидным. Вот в чем суть этого различия.
+
+- Параметры - это имена, которые вы указываете в определении функции.
+- Аргументы - это значения, которые вы передаете функции.
+
+```javascript
+// Определяем для функции myTacos два параметра
+function myTacos(meat, produce) {}
+```
+
+При вызове функции (аргументы) указываются там, где в определении функции размещаются параметры. Очень важно, чтобы аргументы, передаваемые функции, были указаны в том порядке, в каком соответствующие им параметры следуют в определении функции
+
+```javascript
+myTacos('beef', 'onions')
+```
+
+Значения, преданные функции, становятся значениями локальным переменных в функции и принимают имена определенных для нее параметров.
+
+В Функцию закладывается возможность вывода значений обоих аргументов на консоль. Передача аргументов - это все равно что использование инструкции `var` в функции, но только значения поступают извне функции.
+
+```javascript
+function myTacos(meat, produce) {
+	console.log(meat) // Вывести "beef"
+	console.log(produce) // Вывести "onions"
+}
+
+myTacos('beef', 'onions')
+```
+
+<i>В определении функции разрешается задавать до 255 параметров. Однако вероятность того, что у кого-то возникнет реальная потребность в функции с таким большим количеством параметров, чрезвычайно мала. Если вдруг обнаруживается, что вам нужна функция, число параметров в которой очень велико, то всегда имеет смысл подыскать лучший способ организации программы в интересах сохранения ясности и удобочитаемости кода.</i>
